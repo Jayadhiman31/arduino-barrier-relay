@@ -4,8 +4,9 @@ const int closeRelayPin = 8;
 void setup() {
   pinMode(openRelayPin, OUTPUT);
   pinMode(closeRelayPin, OUTPUT);
+
   digitalWrite(openRelayPin, LOW);
-  digitalWrite(closeRelayPin, LOW);
+  digitalWrite(closeRelayPin, HIGH);
 }
 
 void loop() {
@@ -15,9 +16,8 @@ void loop() {
 
   delay(5000);
 
-  digitalWrite(closeRelayPin, HIGH);
-  delay(1000);
   digitalWrite(closeRelayPin, LOW);
-
+  delay(1000);
+  digitalWrite(closeRelayPin, HIGH);
   delay(10000);
 }
